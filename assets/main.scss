@@ -1,0 +1,133 @@
+---
+---
+$base-font-family: "Acne Studios Circle Test", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$spacing-unit: 60px;
+$brand-color: #111;
+@import "{{ site.theme }}";
+.site-header {
+  border-top: none;
+  border-bottom: 2px solid $grey-color-dark;
+  padding: $spacing-unit 0;
+  min-height: $spacing-unit;
+}
+.site-title {
+    letter-spacing: 0;
+}
+.post-meta {
+    font-size: 24px;
+    color: $grey-color-dark;
+}
+a.post-link , a.post-link:visited {
+    color: $grey-color-dark !important;
+}
+.post-list {
+    & h2 {
+        margin-left: 40px; }
+}
+.post-list {
+    & img {
+        max-height: 250px; }
+}
+.category-index {
+  ul.post-list, ul.post-list li:last-of-type, h2:last-of-type {
+    margin-bottom: 0;
+  }
+}
+h2.category-index {
+  text-align: center;
+  margin-top: $spacing-unit;
+}
+// ----- Carousel ----- //
+.gallery {
+  display: flex;
+  align-items: center;
+  width: 120%;
+  margin-left: -10%;
+  margin-bottom: $spacing-unit;
+  height: 100%;
+}
+.gallery-wrap {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  left: -100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transform: translateX(100%);
+}
+.carousel.is-reversing {
+  transform: translateX(-100%);
+}
+.carousel.is-set {
+  transform: none;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-seat {
+  background: #ddd;
+  flex: 1 0 100%;
+  order: 2;
+}
+.carousel-seat:nth-child(even) {
+  background: #d5d5d5;
+}
+@media (min-width: 30em) {
+  .carousel {
+    left: -50%;
+    transform: translateX(50%);
+  }
+    .carousel.is-reversing {
+    transform: translateX(-50%);
+  }
+  .carousel-seat {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 40em) {
+  .carousel {
+    left: -33.33333%;
+    transform: translateX(33.33333%);
+  }
+  .carousel.is-reversing {
+    transform: translateX(-33.33333%);
+  }
+  .carousel-seat {
+    flex-basis: 33.33333%;
+  }
+}
+.carousel-seat.is-ref {
+  order: 1;
+}
+.controls {
+  display:flex;
+  justify-content: space-between;
+  z-index: 9999;
+  position: absolute;
+}
+.gallery button {
+  font-family: "Source Code Pro", "Acne Studios Circle Test";
+  font-size: 32px;
+  width: 10%;
+  background:none;
+  border:none;
+    
+    &:focus {
+        outline: none;
+    }
+}
+// ----- Doodle Page ----- //
+#masonry {
+  width: 680px;
+}
+.masonry-item {
+  width: 30%;
+  margin-bottom: 30px;
+    img {
+      padding-bottom: 10px;
+    }
+}
+.gutter-sizer { width: 2%; }

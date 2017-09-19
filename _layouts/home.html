@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div id="masonry">
+    {% for post in site.posts %}
+    <div class="gutter-sizer"> </div>
+    <div class="masonry-item">
+       <a href="{{ post.url | relative_url }}"><img src="{{ post.thumbnail }}" /></a>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span>{{ post.date | date: date_format }}</span><br/>
+
+
+          <a href="{{ post.url | relative_url }}"> &#8627; {{ post.title | escape }}</a> 
+
+      </div>
+    {% endfor %}
+</div>
+
+
+</div>
